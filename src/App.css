@@ -1,1 +1,14 @@
-/*Schrijf hier jouw eigen CSS!*/
+/*//----card----//*/
+
+.pokemon-card {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
