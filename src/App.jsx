@@ -5,16 +5,14 @@ import axios from "axios";
 
 function App() {
     const [pokemon, setPokemon] = useState([]);
-    const [pokemonNames, setPokemonNames] = useState([]);
+    const [pokeData, setPokeData] = useState();
 
     async function fetchPokemon() {
         try {
-            const response1 = await axios.get('https://pokeapi.co/api/v2/pokemon/jigglypuff');
-            const response2 = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto');
-            const response3 = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20');
-            // console.log(response.data);
-            setPokemon([response1.data, response2.data]);
-            setPokemonNames(response3.data.results);
+            const response3 = await axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0');
+            console.log(response3.data.results);
+            setPokemon(response3.data.results);
+            setPokeData(response3.data);
         }  catch (error) {
             console.error(error);
         }
@@ -28,27 +26,20 @@ function App() {
 
     return (
     <>
-      <h1>Gotta catch em all!</h1>
+        <h1>Gotta catch em all!</h1>
 
-        {pokemon.map(poke => (
-        <PokeCard
-        name ={poke.name}
-        image={poke.sprites?.front_default}
-        moves={poke.moves?.length}
-        weight={poke.weight}
-        abilities={poke.abilities}
-        key={poke.id}
-            />
-        ))}
-
-        <ul>
-            {pokemonNames.map((pokeName) => (
-                <li key={pokeName.name}>{pokeName.name}</li>
-            ))}
-        </ul>
-
+        <section className="outer-container">
+            <ul className="cards-container">
+                {pokemon.map((poke) => (
+                    <PokeCard
+                        key={poke.name}
+                        url={poke.url}
+                    />
+                ))}
+            </ul>
+        </section>
     </>
-  )
+    )
 }
 
 export default App
