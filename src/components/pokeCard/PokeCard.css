@@ -1,0 +1,15 @@
+.pokemon-card {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    width: 175px;
+    justify-content: center;
+
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

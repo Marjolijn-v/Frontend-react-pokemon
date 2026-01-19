@@ -1,1 +1,22 @@
-/*Schrijf hier jouw eigen CSS!*/
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin: 50px;
+}
+
+ul {
+    padding: 15px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    width: 175px;
+    margin: 20px;
+}
