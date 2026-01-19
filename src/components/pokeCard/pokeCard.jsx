@@ -11,7 +11,7 @@ function PokeCard( { url }) {
              const response = await axios.get(url);
 
              setPokeData(response.data);
-             console.log(response.data);
+             // console.log(response.data);
 
          } catch(error) {
              console.error(error);

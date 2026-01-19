@@ -9,3 +9,14 @@
 ul {
     padding: 15px;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    width: 175px;
+    margin: 20px;
+}
